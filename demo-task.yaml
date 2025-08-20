@@ -1,0 +1,24 @@
+---
+  - name: creating file
+    hosts: all
+    tasks:
+      - name: create folder
+        ansible.builtin.file:
+          path: /home/student/devops
+          state: directory
+
+      - name: create user
+        ansible.builtin.user:
+          name: summer
+          state: present
+
+      - name: add a file
+        ansible.builtin.file:
+          path: /home/student/devops/ansible.txt
+          state: touch
+
+      - name: add a line
+        ansible.builtin.lineinfile:
+          path: /home/student/devops/ansible.txt
+          line: "hello This has been added from ubuntu machine"
+          state: present
