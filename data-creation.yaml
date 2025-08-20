@@ -1,0 +1,17 @@
+---
+  - name: creating data
+    hosts: all
+    tasks:
+      - name: create folder 
+        ansible.builtin.file:
+          path: /home/student/awx
+          state: directory
+
+      - name: create file
+        ansible.builtin.file:
+          path: /home/student/awx/testing.txt
+          state: touch
+
+      - name: add data
+        ansible.builtin.command:
+          cmd: lscpu > /home/student/awx/testing.txt
