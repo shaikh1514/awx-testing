@@ -1,0 +1,8 @@
+---
+  - name: testing play
+    hosts: all
+    tasks:
+      - name: create foler
+        ansible.builtin.file:
+          path: /tmp/ansible
+          state: directory
