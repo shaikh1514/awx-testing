@@ -1,0 +1,8 @@
+---
+  - name: create file
+    hosts: all
+    tasks:
+      - name: create file
+        ansible.builtin.file:
+          path: /tmp/advance-ansible.txt
+          state: touch
